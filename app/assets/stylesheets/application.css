@@ -14,7 +14,7 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD
+
 .header{
   display: flex;
   width: 80%;
@@ -50,7 +50,6 @@
   text-decoration: none;
 }
 
-=======
 
  @media screen and (min-width:1050px) {
 
@@ -230,4 +229,3 @@
   }
 
 }
->>>>>>> fd12f2e73292eea9aec2975297a2afe879249182
