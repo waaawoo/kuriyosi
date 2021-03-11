@@ -10,24 +10,7 @@
   </head>
 
   <body>
-  <header class="header">
-    <div class="header_left">
-      <%= image_tag "rogo.jpg", class: "logo" %>
-      <p class="logo_title">栗芳</p>
-    </div>
-    <div class="header_right">
-      <nav>
-        <ul class="menu-group">
-          <li class="menu-item"><a href="#">商品一覧</a></li>
-          <li class="menu-item"><a href="#">新着情報</a></li>
-          <li class="menu-item"><a href="#">店舗情報</a></li>
-          <li class="menu-item"><a href="#">購入シュミレーション</a></li>
-          <li class="menu-item"><a href="#">キャンペーン情報</a></li>
-      </ul>
-      </nav>
-
-    </div>
-  </header>
+    <%= render 'tops/header' %>
     <%= yield %>
   </body>
 </html>
