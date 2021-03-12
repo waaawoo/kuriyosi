@@ -10,10 +10,19 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-  *= require bootstrap/dist/css/bootstrap.min.css
+ *= require bootstrap/dist/css/bootstrap.min.css
  *= require_tree .
  *= require_self
  */
+ // application.scssの冒頭に以下の記述を追記
+
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+ * { font-family: 'Shippori Mincho', serif;}
 
 .header{
   display: flex;
@@ -53,22 +62,24 @@
 
  @media screen and (min-width:1050px) {
 
-  .mobile__menu{
+  .nav-wrapper{
     display: none;
   }
   .header{
     display: flex;
-    width: 80%;
+    width: 100%;
     height: 100px;
     align-items: center;
     margin: 0 auto;
     justify-content: space-around;
+    background-color: #FFFFFF;
   }
   .logo_title{
     margin: 0 0 0 15px;
     font-size: 36px;
     color: #21252A;
     opacity: 0.8;
+    transition: .2s;
 
   }
 
@@ -76,6 +87,7 @@
     text-decoration: none;
     opacity: 1;
     color: #21252A;
+    transition: .2s;
   }
   .logo{
     width: 50px;
@@ -100,10 +112,14 @@
     text-decoration: none;
     color: #21252A;
     opacity: 0.5;
+    transition: .2s;
   }
 
   .menu-item a:hover{
+    text-decoration: none;
+    color: #21252A;
     opacity: 1;
+    transition: .2s;
   }
 
 }
