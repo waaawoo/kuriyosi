@@ -2,14 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$main_color :#FDF8F5;
+$font_color :#21252A;;
+
+// スライダー部分
 .priviews{
-  height: 200px;
   width: 100%;
   z-index: 0;
 }
 
-.main_image{
-  width: 80%;
+.slider{
+  position: relative;
 }
 
 .fa-arrow-left {
@@ -27,3 +30,82 @@
   right: 30px;
   top: 85px;
 }
+
+// 新着情報部分
+.news_container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.new_title_font{
+  text-align: center;
+  padding: 30px 0;
+  font-size: 24px;
+}
+.news_all{
+  margin-bottom: 30px;
+}
+.news_all_btn{
+  text-decoration: none;
+  color: $font_color;
+  opacity: .5;
+  border-bottom: 2px solid $font_color;
+  transition: .2s;
+}
+.news_all_btn:hover{
+  opacity: 1;
+  border-bottom: none;
+  color: $font_color;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.topic{
+  list-style: none;
+  border-bottom: 1px solid $font_color;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+.topic:nth-child(odd){
+  background-color: #EEEEEE;
+}
+
+// 商品一覧
+.item_container{
+  width: 80%;
+  margin: 0 auto;
+  background-color: $main_color;
+  padding-top: 50px;
+}
+.item_card{
+  opacity: .5;
+  transition: .2s;
+}
+.item_card:hover{
+  opacity: 1;
+  transition: .2s;
+}
+.item_name, .item_price{
+  color: $font_color;
+}
+.item_name:hover, .item_price:hover{
+  color: $font_color;
+}
+.item_card:hover{
+  text-decoration: none;
+}
+.item_list{
+  margin: 0 auto;
+}
+
+.item_title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.item_image img{
+  width: 240px;
+  text-align: center;
+}
+
