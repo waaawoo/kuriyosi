@@ -1,3 +1,4 @@
+<%# スライダー部分 %>
 <div class="priviews">
   <div class="slider">
     <%= image_tag "topmain1.jpg", class: "main_image" %>
@@ -5,4 +6,66 @@
     <%= image_tag "topmain1.jpg", class: "main_image" %>
   </div>
 </div>
+
+<%# お知らせ部分 %>
+<div class="news_container">
+  <div class="new_title">
+    <p class="new_title_font">新着情報</p>
+  </div>
+  <div class="news_all">
+    <%= link_to "新着情報一覧へ", root_path, class: "news_all_btn" %>
+  </div>
+  <div class="news_topics">
+    <ul>
+      <li class="topic">2020/03/11 タイトル</li>
+      <li class="topic">2020/03/11 タイトル</li>
+      <li class="topic">2020/03/11 タイトル</li>
+    </ul>
+  </div>
+</div>
+
+<%# 商品一覧 %>
+<div class="item_container">
+  <div class="item_title">
+    <p>商品一覧</p>
+  </div>
+
+  <div class="search">
+  </div>
+
+  <div class="item_list row justify-content-center">
+    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
+      <div class="item_image">
+      <%= image_tag "rogo.jpg", class: "main_image" %>
+      </div>
+      <div class="item_body">
+        <h3 class="item_name">商品名</h3>
+        <div class="item_price">¥200</div>
+      </div>
+    </a>
+
+    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
+      <div class="item_image">
+      <%= image_tag "rogo.jpg", class: "main_image" %>
+      </div>
+      <div class="item_body">
+        <h3 class="item_name">商品名</h3>
+        <div class="item_price">¥200</div>
+      </div>
+    </a>
+
+    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
+      <div class="item_image">
+      <%= image_tag "rogo.jpg", class: "main_image" %>
+      </div>
+      <div class="item_body">
+        <h3 class="item_name">商品名</h3>
+        <div class="item_price">¥200</div>
+      </div>
+    </a>
+
+
+  </div>
+</div>
+
 
