@@ -1,5 +1,5 @@
-window.onload = function(){
-  $(function(){
-    $(".slider").slick();
+$(function(){
+  $(".slider").slick({
+
   });
-}
+});
