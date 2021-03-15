@@ -18,11 +18,11 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    @item = Item.find(params[:id])
   end
 
   def items_list
-
+    @items = Item.order(created_at: :DESC)
   end
 
   private
