@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
+  end
+
+  def create
 
   end
 
@@ -15,6 +19,7 @@ class ItemsController < ApplicationController
   def items_list
 
   end
+
   private
 
   # 管理者以外はルートぱすへ遷移
