@@ -1,1 +1,7 @@
-管理用　商品一覧
+<% if !@items.empty? %>
+  <%= render partial: "items", collection: @items %>
+<% else %>
+ <div class="no_items">
+  <h3>商品を登録してください。</h3>
+ </div>
+<% end %>
