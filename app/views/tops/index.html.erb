@@ -37,15 +37,15 @@
   <div class="item_list row justify-content-center">
     <% if @items %>
       <% @items.each do |item| %>
-    <a class="item_card col-12 col-sm-6 col-lg-4" href= item_path>
-      <div class="item_image">
-      <%= image_tag item.image, class: "main_image" %>
-      </div>
-      <div class="item_body">
-        <h3 class="item_name"><%= item.name %></h3>
-        <div class="item_price">¥<%= item.price %></div>
-      </div>
-    </a>
+        <%= link_to top_path(item.id), class: "item_card col-12 col-sm-6 col-lg-4" do %>
+          <div class="item_image">
+          <%= image_tag item.image, class: "main_image" %>
+          </div>
+          <div class="item_body">
+            <h3 class="item_name"><%= item.name %></h3>
+            <div class="item_price">¥<%= item.price %></div>
+          </div>
+        <% end %>
       <% end %>
     <% else %>
       登録されている商品ありません。
