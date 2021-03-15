@@ -1,1 +1,25 @@
-管理用　商品一覧
+<div class="item_list">
+  <% if !@items.empty? %>
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <th>商品名</th>
+          <th>商品説明</th>
+          <th>商品価格</th>
+          <th>カレゴリー</th>
+          <th>季節</th>
+          <th>キャンペーン</th>
+          <th>メイン画像</th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <%= render partial: "items", collection: @items %>
+    </table>
+  <% else %>
+  <div class="no_items">
+    <h3>商品を登録してください。</h3>
+  </div>
+  <% end %>
+</div>
+
