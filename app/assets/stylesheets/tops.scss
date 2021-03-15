@@ -76,6 +76,7 @@ $font_color :#21252A;;
   margin: 0 auto;
   background-color: $main_color;
   padding-top: 50px;
+  margin-bottom: 150px;
 }
 .item_card{
   opacity: .8;
@@ -107,5 +108,6 @@ $font_color :#21252A;;
 .item_image img{
   width: 240px;
   text-align: center;
+  height: auto;
 }
 

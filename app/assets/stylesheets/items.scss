@@ -86,4 +86,69 @@
     width: 50px;
     height: 50px;
   }
+  td{
+    vertical-align: middle;
+  }
+}
+
+// アイテム詳細画面
+.item_show{
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+
+  &__image{
+    margin-top: 50px;
+    text-align: center;
+  }
+  &__image img{
+    width: 60%;
+  }
+
+  &__name{
+    margin-top: 30px;
+  }
+  &__name p{
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__price{
+    text-align: right;
+    padding-right: 10%;
+    margin-top: 30px;
+  }
+
+  &__content{
+    margin-top: 30px;
+  }
+
+  &__btn{
+    width: 100%;
+    margin-top: 150px;
+
+    .show_btn{
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      border:1px solid #21252A;
+    }
+
+  }
+  &__title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__btn a{
+    color: #21252A;
+    text-decoration: none;
+    transition: .2s;
+  }
+  &__btn a:hover{
+    color: #fff;
+    background-color: #21252A;
+    transition: .2s;
+  }
 }
