@@ -12,6 +12,10 @@
         <li class="menu-item"><a href="#">店舗情報</a></li>
         <li class="menu-item"><a href="#">購入シュミレーション</a></li>
         <li class="menu-item"><a href="#">キャンペーン情報</a></li>
+        <% if user_signed_in? %>
+          <%= link_to "管理者メニュー",  items_path, class: "menu-item" %>
+          <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-item" %>
+        <% end %>
     </ul>
     </nav>
   </div>
@@ -24,6 +28,10 @@
         <li class="menu-list"><a href="#">店舗情報</a></li>
         <li class="menu-list"><a href="#">購入シュミレーション</a></li>
         <li class="menu-list"><a href="#">キャンペーン情報</a></li>
+        <% if user_signed_in? %>
+          <%= link_to "管理者メニュー",  items_path, class: "menu-list" %>
+          <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-list" %>
+        <% end %>
       </ul>
     </nav>
   </div>

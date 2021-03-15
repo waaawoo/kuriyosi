@@ -1,0 +1,47 @@
+<div class="new_item">
+  <div class="new_item__title">
+    <h3>商品登録画面</h3>
+  </div>
+  <div class="new_item__form">
+    <%= form_with model: @item, local:true do |f| %>
+      <%# エラーメッセージ %>
+      <%= render "errors", model: f.object %>
+
+      <div class="items">
+        <div class="item_name">
+          <label for="">商品名</label>
+          <%= f.text_field :name, class: "name", id: "name", placeholder: "商品名を入力" %>
+        </div>
+        <div class="item_content">
+          <label for="">商品説明</label>
+          <%= f.text_area :content, class: "content", id: "content", placeholder: "商品説明文を入力" %>
+        </div>
+        <div class="item_price">
+          <label for="">商品価格</label>
+          <%= f.text_field :price, class: "price", id: "price", placeholder: "商品価格を入力" %>
+        </div>
+        <div class="item_category">
+          <label for="">商品カテゴリー</label>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+        <div class="item_season">
+          <label for="">季節</label>
+          <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+        <div class="item_sale">
+          <label for="">キャンペーン価格</label>
+          <%= f.collection_select(:sale_id, Sale.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </div>
+        <div class="item_image">
+          <label for="">商品画像(正面画像)</label>
+          <%= f.file_field :image, id: "item-image", class:"file" %>
+          <div class="preview"></div>
+        </div>
+      </div>
+      <div class="item_btn">
+        <%= f.submit "登録する", class: "item_btn__submit" %>
+        <%= link_to "戻る", items_path, class: "item_btn__back" %>
+      </div>
+    <% end %>
+  </div>
+</div>
