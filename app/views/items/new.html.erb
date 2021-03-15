@@ -5,7 +5,7 @@
   <div class="new_item__form">
     <%= form_with model: @item, local:true do |f| %>
       <%# エラーメッセージ %>
-
+      <%= render "errors", model: f.object %>
 
       <div class="items">
         <div class="item_name">
@@ -33,7 +33,7 @@
           <%= f.collection_select(:sale_id, Sale.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         </div>
         <div class="item_image">
-          <label for="">商品画像</label>
+          <label for="">商品画像(正面画像)</label>
           <%= f.file_field :image, id: "item-image" %>
         </div>
       </div>
