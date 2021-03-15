@@ -33,36 +33,23 @@
   <div class="search">
   </div>
 
+
   <div class="item_list row justify-content-center">
-    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
+    <% if @items %>
+      <% @items.each do |item| %>
+    <a class="item_card col-12 col-sm-6 col-lg-4" href= item_path>
       <div class="item_image">
-      <%= image_tag "rogo.jpg", class: "main_image" %>
+      <%= image_tag item.image, class: "main_image" %>
       </div>
       <div class="item_body">
-        <h3 class="item_name">商品名</h3>
-        <div class="item_price">¥200</div>
+        <h3 class="item_name"><%= item.name %></h3>
+        <div class="item_price">¥<%= item.price %></div>
       </div>
     </a>
-
-    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
-      <div class="item_image">
-      <%= image_tag "rogo.jpg", class: "main_image" %>
-      </div>
-      <div class="item_body">
-        <h3 class="item_name">商品名</h3>
-        <div class="item_price">¥200</div>
-      </div>
-    </a>
-
-    <a class="item_card col-12 col-sm-6 col-lg-4" href="">
-      <div class="item_image">
-      <%= image_tag "rogo.jpg", class: "main_image" %>
-      </div>
-      <div class="item_body">
-        <h3 class="item_name">商品名</h3>
-        <div class="item_price">¥200</div>
-      </div>
-    </a>
+      <% end %>
+    <% else %>
+      登録されている商品ありません。
+    <% end %>
   </div>
 </div>
 
