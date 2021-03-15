@@ -34,7 +34,8 @@
         </div>
         <div class="item_image">
           <label for="">商品画像(正面画像)</label>
-          <%= f.file_field :image, id: "item-image" %>
+          <%= f.file_field :image, id: "item-image", class:"file" %>
+          <div class="preview"></div>
         </div>
       </div>
       <div class="item_btn">
