@@ -1,6 +1,11 @@
 <div class="item_show">
   <div class="item_show__image">
-    <%= image_tag  @item.images[0] %>
+  <%= image_tag @item.images[0], class: "main_image",id: "main_image_top" %>
+  <ul>
+    <% @item.images.each do |i| %>
+      <li><%= image_tag i, class: "thumbnail_image" %></li>
+    <% end %>
+  </ul>
   </div>
   <div class="item_show__name">
     <p><%= @item.name %></p>

@@ -106,6 +106,20 @@
   &__image{
     margin-top: 50px;
     text-align: center;
+
+    .main_image{
+      width: 80%;
+    }
+    ul{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    li{
+      list-style: none;
+      width: 20%;
+      height: auto;
+    }
   }
   &__image img{
     width: 60%;
