@@ -1,8 +1,10 @@
 <footer>
   <div>
-    <h2>©︎ <a href="">プライバシーポリシー</a></h2>
+    <p>©︎ <a href="">プライバシーポリシー</a><p>
+  </div>
+  <div>
     <% if !user_signed_in? %>
-    <%= link_to "ログイン",  new_user_session_path %>
-  <% end %>
+      <%= link_to "ログイン",  new_user_session_path %>
+    <% end %>
   </div>
 </footer>
