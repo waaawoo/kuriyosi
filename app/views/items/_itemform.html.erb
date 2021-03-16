@@ -25,10 +25,32 @@
   </div>
   <%# TODO リファクタリング必要 %>
   <div class="item_image">
-    <label for="">商品画像(メイン画像)</label>
-    <%= f.file_field :image, id: "item-image", class:"file" ,name: "item[images][]" %>
-    <label for="">商品画像(切り替わり画像)</label>
-    <%= f.file_field :image, id: "item-image", class:"file" ,name: "item[images][]" %>
+
+    <div class="item_image__filed">
+      <label for="">商品画像(メイン画像)<span>必須</span></label>
+      <%= f.file_field :image, id: "item-image1", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像(切り替わり画像)<span>必須</span></label>
+      <%= f.file_field :image, id: "item-image2", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image3", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image4", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image5", class:"file" ,name: "item[images][]" %>
+    </div>
+
   </div>
 </div>
 <div class="item_btn">
