@@ -6,6 +6,9 @@
   <div class="item_content">
     <label for="">商品説明</label>
     <%= f.text_area :content, class: "content", id: "content", placeholder: "商品説明文を入力" %>
+    <p class="conent_count">
+      <span class="content_count">0</span>/1000
+    </p>
   </div>
   <div class="item_price">
     <label for="">商品価格</label>
@@ -23,10 +26,34 @@
     <label for="">キャンペーン価格</label>
     <%= f.collection_select(:sale_id, Sale.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
   </div>
+  <%# TODO リファクタリング必要 %>
   <div class="item_image">
-    <label for="">商品画像(正面画像)</label>
-    <%= f.file_field :image, id: "item-image", class:"file" %>
-    <div class="preview"></div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像(メイン画像)<span>必須</span></label>
+      <%= f.file_field :image, id: "item-image1", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像(切り替わり画像)<span>必須</span></label>
+      <%= f.file_field :image, id: "item-image2", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image3", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image4", class:"file" ,name: "item[images][]" %>
+    </div>
+
+    <div class="item_image__filed">
+      <label for="">商品画像<span>任意</span></label>
+      <%= f.file_field :image, id: "item-image5", class:"file" ,name: "item[images][]" %>
+    </div>
+
   </div>
 </div>
 <div class="item_btn">

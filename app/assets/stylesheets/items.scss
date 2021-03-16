@@ -51,7 +51,13 @@
     width: 100%;
   }
 }
-.item_name input, .item_content textarea, .item_price input{
+.item_content textarea{
+  width: 100%;
+}
+.conent_count{
+  text-align: end;
+}
+.item_name input, .item_content, .item_price input{
   width: 100%;
   margin-bottom: 30px;
 }
@@ -100,6 +106,20 @@
   &__image{
     margin-top: 50px;
     text-align: center;
+
+    .main_image{
+      width: 80%;
+    }
+    ul{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    li{
+      list-style: none;
+      width: 20%;
+      height: auto;
+    }
   }
   &__image img{
     width: 60%;

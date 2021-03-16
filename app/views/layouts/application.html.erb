@@ -20,9 +20,10 @@
   <body>
     <%# ヘッダー  %>
     <%= render 'tops/header' %>
-
+    <% if flash[:notice] %>
+      <p class="flash_message"><%= flash[:notice] %></p>
+    <% end %>
     <%= yield %>
-
     <%# フッター  %>
     <%= render 'tops/footer' %>
   </body>

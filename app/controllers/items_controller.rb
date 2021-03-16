@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to items_path
+      redirect_to items_path, notice: "登録に成功しました"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to items_path
+      redirect_to items_path, notice: "編集に成功しました"
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to items_path
+    redirect_to items_path, notice: "正常に削除されました"
   end
 
   def items_list
@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
       :category_id,
       :season_id,
       :sale_id,
-      :image
+      images: []
     ).merge(user_id: current_user.id)
   end
 

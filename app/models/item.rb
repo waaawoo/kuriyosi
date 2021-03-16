@@ -4,7 +4,7 @@ class Item < ApplicationRecord
     validates :name, length: { maximum: 40 }
     validates :content, length: { maximum: 1000 }
     validates :price, numericality: { greater_than_or_equal_to: 100, less_than: 5000 }
-    validates :image
+    validates :images
     validates :sale
     with_options numericality: { other_than: 1 } do
       validates :category_id
@@ -22,5 +22,5 @@ class Item < ApplicationRecord
   belongs_to_active_hash :season
   belongs_to_active_hash :sale
   # activestorage
-  has_one_attached :image
+  has_many_attached :images
 end
