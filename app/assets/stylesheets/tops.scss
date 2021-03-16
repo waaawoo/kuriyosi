@@ -78,14 +78,33 @@ $font_color :#21252A;;
   padding-top: 50px;
   margin-bottom: 150px;
 }
-.item_card{
-  opacity: .8;
-  transition: .2s;
+// .item_card{
+//   opacity: .8;
+//   transition: .2s;
+// }
+// .item_card:hover{
+//   opacity: 0;
+//   transition: .2s;
+// }
+.item_image{
+  position: relative;
 }
-.item_card:hover{
+.top_sub_image{
+  opacity: 0.8;
+  z-index: 0;
+}
+.top_main_image{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+.top_main_image:hover{
   opacity: 1;
-  transition: .2s;
 }
+
 .item_name, .item_price{
   color: $font_color;
 }
