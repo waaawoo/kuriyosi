@@ -5,7 +5,7 @@
     <td><%= items.category.name %></td>
     <td><%= items.season.name %></td>
     <td><%= items.sale.name %></td>
-    <td><%= image_tag items.image %></td>
+    <td><%= image_tag items.images[0] %></td>
     <td><%= link_to "詳細", top_path(items.id) %></td>
     <td><%= link_to "編集", edit_item_path(items.id) %></td>
     <td><%= link_to "削除", item_path(items.id), method: :delete, data: { confirm:"削除する場合データを戻せません、本当に削除しますか？" } %></td>

@@ -23,10 +23,12 @@
     <label for="">キャンペーン価格</label>
     <%= f.collection_select(:sale_id, Sale.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
   </div>
+  <%# TODO リファクタリング必要 %>
   <div class="item_image">
-    <label for="">商品画像(正面画像)</label>
-    <%= f.file_field :image, id: "item-image", class:"file" %>
-    <div class="preview"></div>
+    <label for="">商品画像(メイン画像)</label>
+    <%= f.file_field :image, id: "item-image", class:"file" ,name: "item[images][]" %>
+    <label for="">商品画像(切り替わり画像)</label>
+    <%= f.file_field :image, id: "item-image", class:"file" ,name: "item[images][]" %>
   </div>
 </div>
 <div class="item_btn">

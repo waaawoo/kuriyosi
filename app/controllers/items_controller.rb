@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     if @item.save
       redirect_to items_path
     else
@@ -57,7 +58,7 @@ class ItemsController < ApplicationController
       :category_id,
       :season_id,
       :sale_id,
-      :image
+      images: []
     ).merge(user_id: current_user.id)
   end
 

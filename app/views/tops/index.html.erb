@@ -39,7 +39,10 @@
       <% @items.each do |item| %>
         <%= link_to top_path(item.id), class: "item_card col-12 col-sm-6 col-lg-4" do %>
           <div class="item_image">
-          <%= image_tag item.image, class: "main_image" %>
+          <%# item.images.each do |i| %>
+            <%#= image_tag i, class: "main_image" %>
+          <%# end %>
+          <%= image_tag item.images[0], class: "main_image" %>
           </div>
           <div class="item_body">
             <h3 class="item_name"><%= item.name %></h3>
