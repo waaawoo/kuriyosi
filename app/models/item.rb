@@ -5,7 +5,7 @@ class Item < ApplicationRecord
     validates :content, length: { maximum: 1000 }
     validates :price, numericality: { greater_than_or_equal_to: 100, less_than: 5000 }
     validates :images
-    validates :sale
+    validates :sale_id
     with_options numericality: { other_than: 1 } do
       validates :category_id
       validates :season_id
