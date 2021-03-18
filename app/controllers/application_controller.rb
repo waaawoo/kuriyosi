@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # deviseコントローラーを呼んだ時に実行
-  before_action :basic_auth, if: :devise_controller?
+  before_action :basic_auth#, if: :devise_controller?
 
 
   private
