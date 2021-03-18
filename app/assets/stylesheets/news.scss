@@ -1,3 +1,57 @@
 // Place all the styles related to the news controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.news_new__container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.news_header{
+  text-align: center;
+  margin: 40px 0;
+
+  &__title span{
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
+  }
+}
+
+.news_form{
+  &__title, &__content{
+    margin-bottom: 5px;
+    font-size: large;
+    >span{
+      color: red;
+      font-size:medium;
+    }
+    &__area{
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image__area{
+    margin-bottom: 50px;
+  }
+
+  &__btn{
+    margin-bottom: 100px;
+    text-align: center;
+    &__submit, &__back{
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+      opacity: 0.8;
+    }
+    &__back{
+      border: 1px solid;
+      border-radius: 4px;
+    }
+    &__back:hover{
+      color: #333;
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+}

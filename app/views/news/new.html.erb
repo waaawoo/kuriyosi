@@ -1,1 +1,19 @@
-ニュース登録
+<div class="news_new__container">
+
+  <div class="news_header">
+    <div class="news_header__title">
+      <h3><span>新着情報一覧</span></h3>
+    </div>
+  </div>
+
+  <div class="news_main">
+    <%= form_with model: @news, local: true do |f| %>
+      <%# エラーメッセージ %>
+      <%= render 'items/errors', model: f.object %>
+
+      <%# 登録フォーム %>
+      <%= render 'newsform', { f: f } %>
+    <% end %>
+  </div>
+
+</div>
