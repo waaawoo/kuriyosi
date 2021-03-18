@@ -7,12 +7,16 @@
   <div class="news_form__content">
     新着情報詳細 <span class="required">必須</span>
   </div>
-  <%= f.text_area :content,rows: 10, class: "news_form__content__area", placeholder: "詳細情報（1000文字まで）", maxlength: "1000" %>
+  <%= f.text_area :content, id: "content", rows: 10, class: "news_form__content__area", placeholder: "詳細情報（1000文字まで）", maxlength: "1000" %>
+  <p class="conent_count">
+      <span class="content_count">0</span>/1000
+    </p>
 
   <div class="news_form__image">
     画像情報
   </div>
-  <%= f.file_field :image, class: "news_form__image__area" %>
+  <%= f.file_field :image, class: [:news_form__image__area] %>
+  <div class="" id="preview"></div>
 
   <div class="news_form__btn">
     <%= f.submit "作成！", class: "news_form__btn__submit" %>
