@@ -15,7 +15,7 @@
   <div class="news_all">
     <%= link_to "新着情報一覧へ", news_index_path, class: "news_all_btn" %>
   </div>
-  <% if @newsList %>
+  <% if !@newsList.nil? %>
     <%= render partial: "news/newsList", collection: @newsList %>
   <% else %>
     <div class="no_news">新着情報はまだありません。</div>
@@ -33,7 +33,7 @@
 
 
   <div class="item_list row justify-content-center">
-    <% if @items %>
+    <% if !@items.nil? %>
       <% @items.each do |item| %>
         <%= link_to top_path(item.id), class: "item_card col-12 col-sm-6 col-lg-4" do %>
           <div class="item_image">

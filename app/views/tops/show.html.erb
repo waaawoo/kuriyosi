@@ -15,7 +15,7 @@
   </div>
   <div class="item_show__content">
     <p>商品説明</p>
-    <p><%= @item.content %></p>
+    <%= simple_format(@item.content) %>
   </div>
   <%= render "link" %>
 </div>
