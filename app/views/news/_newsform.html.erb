@@ -15,6 +15,13 @@
   <div class="news_form__image">
     画像情報
   </div>
+
+  <%# 編集時編集前の画像表示 %>
+  <% if @news.image.attached? %>
+    <p>編集前画像
+    <%= image_tag @news.image ,class: "edit_image_size" %></p>
+  <% end %>
+
   <%= f.file_field :image, class: [:news_form__image__area] %>
   <div class="" id="preview"></div>
 

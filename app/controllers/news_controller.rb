@@ -21,6 +21,25 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
   end
 
+  def edit
+    @news = News.find(params[:id])
+  end
+
+  def update
+    @news = News.find(params[:id])
+    if @news.update(news_params)
+      redirect_to items_path, notice: "編集に成功しました"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @news = News.find(params[:id])
+    @news.destroy
+    redirect_to items_path, notice: "正常に削除されました"
+  end
+
   private
    # 管理者以外はルートぱすへ遷移
    def auth_Check

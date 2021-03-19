@@ -4,7 +4,7 @@
       <div class="news_index__list__title"><%= newsList.title %></div>
   <% end %>
   <% if user_signed_in? %>
-      <div class="news_index__list__edit"><%= link_to "編集", root_path %></div>
-      <div class="news_index__list__delete"><%= link_to "削除", root_path %></div>
+      <div class="news_index__list__edit"><%= link_to "編集", edit_news_path(newsList.id) %></div>
+      <div class="news_index__list__delete"><%= link_to "削除", news_path(newsList.id), method: :delete, data: { confirm:"削除する場合データを戻せません、本当に削除しますか？" } %></div>
   <% end %>
   </div>
