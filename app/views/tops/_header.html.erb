@@ -8,13 +8,13 @@
     <nav>
       <ul class="menu-group">
         <li class="menu-item"><%= link_to "商品一覧画面", root_path %></li>
-        <li class="menu-item"><a href="#">新着情報</a></li>
+        <li class="menu-item"><%= link_to "新着情報", news_index_path %></li>
         <li class="menu-item"><a href="#">店舗情報</a></li>
         <li class="menu-item"><a href="#">購入シュミレーション</a></li>
         <li class="menu-item"><a href="#">キャンペーン情報</a></li>
         <% if user_signed_in? %>
-          <%= link_to "管理者メニュー",  items_path, class: "menu-item" %>
-          <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-item" %>
+          <li class="menu-item"><%= link_to "管理者メニュー",  items_path, class: "menu-item" %></li>
+          <li class="menu-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-item" %></li>
         <% end %>
     </ul>
     </nav>
@@ -23,14 +23,14 @@
   <div class="nav-wrapper">
     <nav class="header-nav">
       <ul class="nav-list">
-        <li class="menu-list"><a href="#">商品一覧</a></li>
-        <li class="menu-list"><a href="#">新着情報</a></li>
+        <li class="menu-list"><%= link_to "商品一覧画面", root_path %></li>
+        <li class="menu-list"><%= link_to "新着情報", news_index_path %></li>
         <li class="menu-list"><a href="#">店舗情報</a></li>
         <li class="menu-list"><a href="#">購入シュミレーション</a></li>
         <li class="menu-list"><a href="#">キャンペーン情報</a></li>
         <% if user_signed_in? %>
-          <%= link_to "管理者メニュー",  items_path, class: "menu-list" %>
-          <%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-list" %>
+          <li class="menu-list"><%= link_to "管理者メニュー",  items_path, class: "menu-list" %></li>
+          <li class="menu-list"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete, class: "menu-list" %></li>
         <% end %>
       </ul>
     </nav>

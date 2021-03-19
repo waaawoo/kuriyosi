@@ -1,0 +1,33 @@
+<div class="news_form">
+  <div class="news_form__title">
+    新着情報タイトル <span class="required">必須</span>
+  </div>
+  <%= f.text_field :title, class: "news_form__title__area", placeholder: "タイトル（40文字まで）", maxlength: "40" %>
+
+  <div class="news_form__content">
+    新着情報詳細 <span class="required">必須</span>
+  </div>
+  <%= f.text_area :content, id: "content", rows: 10, class: "news_form__content__area", placeholder: "詳細情報（1000文字まで）", maxlength: "1000" %>
+  <p class="conent_count">
+      <span class="content_count">0</span>/1000
+    </p>
+
+  <div class="news_form__image">
+    画像情報
+  </div>
+
+  <%# 編集時編集前の画像表示 %>
+  <% if @news.image.attached? %>
+    <p>編集前画像
+    <%= image_tag @news.image ,class: "edit_image_size" %></p>
+  <% end %>
+
+  <%= f.file_field :image, class: [:news_form__image__area] %>
+  <div class="" id="preview"></div>
+
+  <div class="news_form__btn">
+    <%= f.submit "作成！", class: "news_form__btn__submit" %>
+    <%= link_to "戻る", items_path, class: "news_form__btn__back" %>
+  </div>
+
+ </div>

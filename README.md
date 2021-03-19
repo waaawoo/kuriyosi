@@ -23,6 +23,18 @@ Things you may want to cover:
 
 * ...
 
+# プリケーション名
+ kuriyosi
+
+ # アプリケーション概要
+  商品登録・編集・削除、
+  新着情報登録・編集・削除、
+  店舗情報の登録・編集
+  お買い物シュミレーション
+
+# URL
+https://kuriyosi.herokuapp.com/
+
 # テーブル設計
 
 ## userテーブル
@@ -47,3 +59,16 @@ column Type Options
 
 ### association
 belongs_to :user
+has_many :images
+
+## newsテーブル
+
+| Column             | Type       | Options                        |
+| -------------------|----------- |--------------------------------|
+|  title             | string     | null: false                    |
+|  content           | string     | null: false                    |
+|  user              | references | null: false, foreign_key: true |
+
+### association
+belongs_to :user
+has_many :images

@@ -1,0 +1,14 @@
+<div class="news_index">
+
+  <div class="news_index__title">
+    <h3><span>新着情報一覧画面</span></h3>
+  </div>
+
+
+<% if @newsList %>
+    <%= render partial: "newsList", collection: @newsList %>
+<% else %>
+  <div class="no_news">新着情報はまだありません。</div>
+<% end %>
+
+</div>

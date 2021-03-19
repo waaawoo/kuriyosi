@@ -34,8 +34,25 @@ $(function(){
       return false;
     });
   }
+
+  //
   $('#content').keyup(function(){
     let count = $(this).val().length;
     $(".content_count").text(count);
   });
+
+  //
+  $(function(){
+    $('.news_form__image__area').change(function(){
+      // imgタグを削除する
+      $('img').remove();
+      let file = $(this).prop('files')[0];
+      let fileReader = new FileReader();
+      fileReader.onloadend = function(){
+        $('#preview').html('<img class="news_preview" src="' + fileReader.result + '"/>');
+      }
+      fileReader.readAsDataURL(file);
+    });
+  });
+
 });
