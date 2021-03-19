@@ -17,11 +17,6 @@
     <p>商品説明</p>
     <p><%= @item.content %></p>
   </div>
-  <div class="item_show__btn">
-    <p class="item_show__title">その他紹介</p>
-    <p><%= link_to "商品一覧画面へ", root_path, class: "show_btn" %></p>
-    <p><%= link_to "新着情報一覧画面へ", root_path, class: "show_btn" %></p>
-    <p><%= link_to "キャンペーン商品画面へ", root_path, class: "show_btn" %></p>
-  </div>
+  <%= render "link" %>
 </div>
 

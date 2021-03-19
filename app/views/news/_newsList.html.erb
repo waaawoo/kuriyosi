@@ -1,5 +1,5 @@
 <div class="news_index__menu">
-  <%= link_to root_path, class: "news_index__lists" do %>
+  <%= link_to news_path(newsList.id), class: "news_index__lists" do %>
       <div class="news_index__list__time"><%= newsList.created_at.strftime('%Y/%m/%d') %></div>
       <div class="news_index__list__title"><%= newsList.title %></div>
   <% end %>

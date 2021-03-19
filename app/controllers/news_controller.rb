@@ -17,6 +17,10 @@ class NewsController < ApplicationController
     end
   end
 
+  def show
+    @news = News.find(params[:id])
+  end
+
   private
    # 管理者以外はルートぱすへ遷移
    def auth_Check
