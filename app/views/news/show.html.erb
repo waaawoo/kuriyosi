@@ -12,7 +12,8 @@
 
     <div class="news_show__content">
       <p>詳細：</p>
-      <%= @news.content %>
+      <%= simple_format(@news.content) %>
+
     </div>
 
     <% if @news.image.attached? %>
