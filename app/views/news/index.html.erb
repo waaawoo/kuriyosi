@@ -5,7 +5,7 @@
   </div>
 
 
-<% if @newsList %>
+<% if !@newsList.nil? %>
     <%= render partial: "newsList", collection: @newsList %>
 <% else %>
   <div class="no_news">新着情報はまだありません。</div>
