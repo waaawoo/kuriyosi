@@ -50,7 +50,7 @@ column Type Options
 | Column             | Type       | Options                        |
 | -------------------|----------- |--------------------------------|
 |  name              | string     | null: false                    |
-|  content           | string     | null: false                    |
+|  content           | text       | null: false                    |
 |  price             | integer    | null: false                    |
 |  category_id       | integer    | null: false                    |
 |  season_id         | integer    | null: false                    |
@@ -66,9 +66,19 @@ has_many :images
 | Column             | Type       | Options                        |
 | -------------------|----------- |--------------------------------|
 |  title             | string     | null: false                    |
-|  content           | string     | null: false                    |
+|  content           | text       | null: false                    |
 |  user              | references | null: false, foreign_key: true |
 
 ### association
 belongs_to :user
 has_many :images
+
+## storeテーブル
+| Column             | Type       | Options                        |
+| -------------------|----------- |--------------------------------|
+|  name              | string     | null: false                    |
+|  phone             | string     | null: false                    |
+|  address           | string     | null: false                    |
+|  open_time         | string     | null: false                    |
+|  close_time        | string     | null: false                    |
+|  holiday_id        | integer    | null: false                    |
