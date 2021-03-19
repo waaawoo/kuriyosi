@@ -5,19 +5,8 @@
   </div>
 
 
-<% if @newsAll %>
-  <% @newsAll.each do |news| %>
-    <div class="news_index__menu">
-      <%= link_to root_path, class: "news_index__lists" do %>
-          <div class="news_index__list__time"><%= news.created_at.strftime('%Y/%m/%d') %></div>
-          <div class="news_index__list__title"><%= news.title %></div>
-      <% end %>
-      <% if user_signed_in? %>
-          <div class="news_index__list__edit"><%= link_to "編集", root_path %></div>
-          <div class="news_index__list__delete"><%= link_to "削除", root_path %></div>
-      <% end %>
-    </div>
-  <% end %>
+<% if @newsList %>
+    <%= render partial: "newsList", collection: @newsList %>
 <% else %>
   <div class="no_news">新着情報はまだありません。</div>
 <% end %>

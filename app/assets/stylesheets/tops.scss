@@ -33,8 +33,9 @@ $font_color :#21252A;;
 
 // 新着情報部分
 .news_container{
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .new_title_font{
@@ -60,15 +61,15 @@ $font_color :#21252A;;
   transition: .2s;
 }
 
-.topic{
-  list-style: none;
-  border-bottom: 1px solid $font_color;
-  padding-bottom: 10px;
-  padding-left: 15px;
-}
-.topic:nth-child(odd){
-  background-color: #EEEEEE;
-}
+// .topic{
+//   list-style: none;
+//   border-bottom: 1px solid $font_color;
+//   padding-bottom: 10px;
+//   padding-left: 15px;
+// }
+// .topic:nth-child(odd){
+//   background-color: #EEEEEE;
+// }
 
 // 商品一覧
 .item_container{

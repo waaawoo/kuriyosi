@@ -15,13 +15,11 @@
   <div class="news_all">
     <%= link_to "新着情報一覧へ", news_index_path, class: "news_all_btn" %>
   </div>
-  <div class="news_topics">
-    <ul>
-      <li class="topic">2020/03/11 タイトル</li>
-      <li class="topic">2020/03/11 タイトル</li>
-      <li class="topic">2020/03/11 タイトル</li>
-    </ul>
-  </div>
+  <% if @newsList %>
+    <%= render partial: "news/newsList", collection: @newsList %>
+  <% else %>
+    <div class="no_news">新着情報はまだありません。</div>
+  <% end %>
 </div>
 
 <%# 商品一覧 %>
