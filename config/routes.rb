@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :tops, only: [:show]
   resources :items
   resources :news
+  resources :store
   get "items_list" => "items#items_list"
 end
