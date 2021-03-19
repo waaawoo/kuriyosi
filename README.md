@@ -82,3 +82,5 @@ has_many :images
 |  open_time         | string     | null: false                    |
 |  close_time        | string     | null: false                    |
 |  holiday_id        | integer    | null: false                    |
+
+has_many :images
