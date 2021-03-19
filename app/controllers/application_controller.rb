@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # deviseコントローラーを呼んだ時に実行
   before_action :basic_auth#, if: :devise_controller?
+  before_action :basic_auth, if: :devise_controller?
 
 
   private
@@ -17,6 +18,13 @@ class ApplicationController < ActionController::Base
       # vim ~/.zshrc
       # source ~/.zshrc
       username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASSWORD']
+    end
+  end
+
+  # 管理者以外はルートぱすへ遷移
+  def auth_Check
+    if !user_signed_in?
+      redirect_to root_path
     end
   end
 end
