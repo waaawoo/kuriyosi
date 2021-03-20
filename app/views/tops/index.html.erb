@@ -63,36 +63,40 @@
     <h3><span>店舗情報</span></h3>
   </div>
 
-<%= link_to store_path(@storeTOP.id) do %>
-  <div class="store_container__main">
-    <div class="store_container__main__left">
-      <div class="store_container__main__left__image">
-        <%= image_tag @storeTOP.images[0] %>
+<% if !@storeTOP.blank? %>
+  <%= link_to store_path(@storeTOP.id) do %>
+    <div class="store_container__main">
+      <div class="store_container__main__left">
+        <div class="store_container__main__left__image">
+          <%= image_tag @storeTOP.images[0] %>
+        </div>
+      </div>
+
+      <div class="store_container__main__right">
+        <div class="store_container__main__right__name">
+          <%= @storeTOP.name %>
+        </div>
+
+        <div class="store_container__main__right__phone">
+          <span>電話番号:</span>  <%= @storeTOP.phone %>
+        </div>
+
+        <div class="store_container__main__right__address">
+          住所: <%= @storeTOP.address %>
+        </div>
+
+        <div class="store_container__main__right__time">
+          営業時間: <%= @storeTOP.open_time.time.strftime('%H:%M') %> ~ <%= @storeTOP.close_time.time.strftime('%H:%M') %>
+        </div>
+
+        <div class="store_container__main__right__holiday">
+          定休日: <%= @storeTOP.holiday.name %>
+        </div>
       </div>
     </div>
-
-    <div class="store_container__main__right">
-      <div class="store_container__main__right__name">
-        <%= @storeTOP.name %>
-      </div>
-
-      <div class="store_container__main__right__phone">
-        <span>電話番号:</span>  <%= @storeTOP.phone %>
-      </div>
-
-      <div class="store_container__main__right__address">
-        住所: <%= @storeTOP.address %>
-      </div>
-
-      <div class="store_container__main__right__time">
-        営業時間: <%= @storeTOP.open_time.time.strftime('%H:%M') %> ~ <%= @storeTOP.close_time.time.strftime('%H:%M') %>
-      </div>
-
-      <div class="store_container__main__right__holiday">
-        定休日: <%= @storeTOP.holiday.name %>
-      </div>
-    </div>
-  </div>
-</div>
+  <% end %>
 <% end %>
+
+</div>
+
 

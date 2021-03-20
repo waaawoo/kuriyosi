@@ -18,11 +18,18 @@ class StoresController < ApplicationController
   end
 
   def edit
-    @store = Store.find(params[:id])
   end
 
   def update
+    @store = Store.find(@storeTOP.id)
+    if @store.update(store_params)
+      redirect_to items_path, notice: "登録に成功しました"
+    else
+      render :new
+    end
+  end
 
+  def show
   end
 
   private

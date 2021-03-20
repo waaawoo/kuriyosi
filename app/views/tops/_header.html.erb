@@ -9,7 +9,9 @@
       <ul class="menu-group">
         <li class="menu-item"><%= link_to "商品一覧画面", root_path %></li>
         <li class="menu-item"><%= link_to "新着情報", news_index_path %></li>
-        <li class="menu-item"><%= link_to "店舗情報", store_path(@storeTOP.id) %></li>
+        <% if !@storeTOP.blank? %>
+          <li class="menu-item"><%= link_to "店舗情報", store_path(@storeTOP.id) %></li>
+        <% end %>
         <li class="menu-item"><a href="#">購入シュミレーション</a></li>
         <li class="menu-item"><a href="#">キャンペーン情報</a></li>
         <% if user_signed_in? %>
@@ -25,7 +27,9 @@
       <ul class="nav-list">
         <li class="menu-list"><%= link_to "商品一覧画面", root_path %></li>
         <li class="menu-list"><%= link_to "新着情報", news_index_path %></li>
-        <li class="menu-list"><%= link_to "店舗情報", store_path(@storeTOP.id) %></li>
+        <% if !@storeTOP.blank? %>
+          <li class="menu-list"><%= link_to "店舗情報", store_path(@storeTOP.id) %></li>
+        <% end %>
         <li class="menu-list"><a href="#">購入シュミレーション</a></li>
         <li class="menu-list"><a href="#">キャンペーン情報</a></li>
         <% if user_signed_in? %>
