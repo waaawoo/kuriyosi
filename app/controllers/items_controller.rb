@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :auth_Check
   def index
-
+    @store = Store.first
   end
 
   def new
