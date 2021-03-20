@@ -9,7 +9,12 @@ class StoresController < ApplicationController
   end
 
   def create
-
+    @store = Store.new(store_params)
+    if @store.save
+      redirect_to items_path, notice: "登録に成功しました"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -29,5 +34,17 @@ class StoresController < ApplicationController
     if !user_signed_in?
       redirect_to root_path
     end
+  end
+
+  def store_params
+    params.require(:store).permit(
+      :name,
+      :phone,
+      :address,
+      :open_time,
+      :close_time,
+      :holiday_id,
+      images: []
+    )
   end
 end
