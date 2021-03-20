@@ -1,0 +1,49 @@
+<div class="store_form">
+
+  <div class="store_form__name">
+    店舗名
+  </div>
+  <%= f.text_field :name, class:"store_form__name__area", maxlength: "40" %>
+
+  <div class="store_form__phone">
+    電話番号
+  </div>
+  <%= f.text_field :phone, class: "store_form__phone__area", maxlength: "11" %>
+
+  <div class="store_form__address">
+    住所
+  </div>
+  <%= f.text_field :address, class: "store_form__address__area", maxlength: "100" %>
+
+  <div class="store_form__opentime">
+    開店時間
+  </div>
+  <%# TODO リファクタリングする %>
+  <%= f.time_select :open_time, class: "store_form__opne__time" %>
+
+
+    <div class="store_form__close_time">
+      閉店時間
+    </div>
+    <%= f.time_select :close_time, class: "store_form__close__time" %>
+
+    <div class="store_form__holiday">
+      定休日
+    </div>
+    <%= f.collection_select(:holiday_id, Holiday.all, :id, :name, {}, {class:"select-box"}) %>
+
+    <div class="store_form__images">
+      店舗外観
+      <%= f.file_field :image, class:"file" ,name: "store[images][]" %>
+    </div>
+
+    <div class="store_form__images">
+      店舗内観
+      <%= f.file_field :image, class:"file" ,name: "store[images][]" %>
+    </div>
+
+    <div class="item_btn">
+      <%= f.submit "登録する", class: "item_btn__submit" %>
+      <%= link_to "戻る", items_path, class: "item_btn__back" %>
+    </div>
+</div>
