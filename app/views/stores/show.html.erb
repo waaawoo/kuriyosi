@@ -1,0 +1,45 @@
+<div class="store_show">
+
+  <div class="store_show__title">
+    <h3><span>店舗詳細</span></h3>
+  </div>
+
+  <div class="store_show__main">
+
+    <div class="show__main__lift">
+      <%= image_tag @storeTOP.images[0], class: "show__main__lift__image",id: "main_image_top" %>
+      <ul>
+        <% @storeTOP.images.each do |i| %>
+          <li><%= image_tag i, class: "thumbnail_image" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <div class="show__main__right">
+
+      <div class="show__main__right__name">
+      店名<br>
+        <%= @storeTOP.name %>
+      </div>
+      <div class="show__main__right__phone">
+      電話番号<br>
+        <%= @storeTOP.phone %>
+      </div>
+      <div class="show__main__right__address">
+        住所<br>
+        <%= @storeTOP.address %>
+      </div>
+      <div class="show__main__right__time">
+        営業時間: <%= @storeTOP.open_time.time.strftime('%H:%M') %> ~ <%= @storeTOP.close_time.time.strftime('%H:%M') %>
+      </div>
+      <div class="show__main__right__holiday">
+        定休日: <%= @storeTOP.holiday.name %>
+      </div>
+    </div>
+
+  </div>
+  <%# GooglemapAPI導入予定 %>
+  <%= render "tops/link" %>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="news_new__container">
+
+  <div class="news_header">
+    <div class="news_header__title">
+      <h3><span>店舗登録</span></h3>
+    </div>
+  </div>
+
+  <div class="news_main">
+    <%= form_with model: @store, local: true do |f| %>
+      <%# エラーメッセージ %>
+      <%= render 'items/errors', model: f.object %>
+
+      <%# 登録フォーム %>
+      <%= render 'storeform', { f: f } %>
+    <% end %>
+  </div>
+
+</div>

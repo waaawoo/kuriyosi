@@ -7,4 +7,10 @@
   <%= link_to "商品編集・削除", items_list_path, class: "kanri_list item_edit" %>
   <%= link_to "新着情報登録", new_news_path, class: "kanri_list news_input" %>
   <%= link_to "新着情報編集・削除", news_index_path, class: "kanri_list news_edit" %>
+  <%# 最初の登録以外は編集になる %>
+  <% if @store.blank? %>
+    <%= link_to "店舗情報登録", new_store_path, class: "kanri_list store_input" %>
+  <% else %>
+    <%= link_to "店舗情報編集", edit_store_path(@store.id), class: "kanri_list store_edit" %>
+  <% end %>
 </div>

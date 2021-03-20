@@ -1,0 +1,59 @@
+// Place all the styles related to the stores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store_show{
+  width: 60%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+
+  &__title{
+    text-align: center;
+    margin-bottom: 100px;
+
+    >h3 > span{
+      border-bottom: 1px solid;
+    }
+  }
+
+  &__main{
+    display: flex;
+  }
+}
+
+.show__main{
+  &__lift{
+      width: 100%;
+      height: auto;
+
+      &__image{
+       width: 70%;
+      }
+        > ul{
+          display: flex;
+          > li{
+          list-style: none;
+
+            > img{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+          }
+        }
+      }
+  }
+}
+.show__main{
+  &__right{
+    width: 50%;
+    height: auto;
+    padding-left: 50px;
+
+    &__name, &__phone, &__address, &__time, &__holiday{
+      margin-bottom: 15px;
+      font-size: 16px;
+      border-bottom: 1px solid;
+    }
+  }
+}
