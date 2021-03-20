@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # deviseコントローラーを呼んだ時に実行
   before_action :basic_auth#, if: :devise_controller?
   before_action :basic_auth, if: :devise_controller?
+  before_action :storeId
 
 
   private
@@ -26,5 +27,9 @@ class ApplicationController < ActionController::Base
     if !user_signed_in?
       redirect_to root_path
     end
+  end
+
+  def storeId
+    @storeTOP = Store.first
   end
 end
