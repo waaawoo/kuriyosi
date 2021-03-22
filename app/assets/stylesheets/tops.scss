@@ -92,10 +92,10 @@ $font_color :#21252A;;
   opacity: 1;
 }
 
-.item_name, .item_price{
+.item_name, .item_price, .sale__item_price, .sale__item_saleprice{
   color: $font_color;
 }
-.item_name:hover, .item_price:hover{
+.item_name:hover, .item_price:hover, .item_price__sale:hover, .item_price__saleprice:hover{
   color: $font_color;
 }
 .item_card:hover{
@@ -115,6 +115,20 @@ $font_color :#21252A;;
   width: 240px;
   text-align: center;
   height: auto;
+}
+
+.sale{
+  display: flex;
+  &__item{
+    &_price{
+    text-decoration: line-through;
+
+    }
+    &_saleprice span{
+      font-size: large;
+      color: red;
+    }
+  }
 }
 
 // 店舗情報
@@ -160,8 +174,23 @@ $font_color :#21252A;;
         font-size: 3ex;
         color: #21252A;
       }
-
     }
+  }
+}
 
+// キャンペーン情報
+.campaign{
+  width: 60%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+
+  &__title{
+    text-align: center;
+    margin-bottom: 100px;
+
+    >h3 > span{
+      border-bottom: 1px solid;
+    }
   }
 }

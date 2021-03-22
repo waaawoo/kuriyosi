@@ -99,7 +99,12 @@
 
 // アイテム詳細画面
 .item_show{
-  width: 60%;
+  @media screen and(max-width: 1000px) {
+    width: 700px;
+  }
+  @media screen and(min-width: 1000px) {
+    width: 1000px;
+  }
   margin: 0 auto;
   margin-bottom: 100px;
 
@@ -108,39 +113,46 @@
     text-align: center;
 
     .main_image{
-      width: 80%;
+      width: 60%;
+      border: 1px solid rgba($color: #000000, $alpha: .3);
     }
     ul{
+      width: 60%;
       display: flex;
-      justify-content: center;
+      justify-content: left;
       margin-top: 10px;
+      margin: 0 auto;
+      padding-left: 0;
     }
     li{
       list-style: none;
       width: 20%;
       height: auto;
+      border: 1px solid rgba($color: #000000, $alpha: .3);
     }
   }
   &__image img{
+    width: 100%;
+  }
+  &__name, &__price, &__content{
     width: 60%;
-  }
-
-  &__name{
+    margin: 0 auto;
     margin-top: 30px;
-  }
-  &__name p{
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 36px;
   }
 
   &__price{
     text-align: right;
-    padding-right: 10%;
-    margin-top: 30px;
+    font-size: 24px;
+    > .sale__item_price{
+      text-decoration: line-through;
+    }
+    > .sale__item_saleprice span{
+      font-size: 36px;
+    }
   }
-
   &__content{
-    margin-top: 30px;
+    font-size: 24px;
   }
 
   &__btn{

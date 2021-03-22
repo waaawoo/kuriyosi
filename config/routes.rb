@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :news
   resources :stores
   get "items_list" => "items#items_list"
+  get "campaign_list" => 'tops#campaign_list'
 end
