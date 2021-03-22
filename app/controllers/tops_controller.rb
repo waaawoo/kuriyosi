@@ -7,4 +7,9 @@ class TopsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def campaign_list
+    @items = Item.where.not(sale_id: 1)
+  end
+
 end
