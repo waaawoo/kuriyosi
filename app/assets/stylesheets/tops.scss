@@ -12,7 +12,6 @@ $font_color :#21252A;;
   margin: 0 auto;
 }
 
-
 .slider{
   position: relative;
 }
@@ -75,6 +74,7 @@ $font_color :#21252A;;
 
 .item_image{
   position: relative;
+  text-align: center;
 }
 .top_sub_image{
   opacity: 0.8;
@@ -82,8 +82,8 @@ $font_color :#21252A;;
 }
 .top_main_image{
   position: absolute;
-  left: 0;
-  top: 0;
+  // left: 0;
+  // top: 0;
   opacity: 0;
   transition: 0.5s;
   z-index: 1;
@@ -98,9 +98,12 @@ $font_color :#21252A;;
 .item_name:hover, .item_price:hover, .item_price__sale:hover, .item_price__saleprice:hover{
   color: $font_color;
 }
-.item_card:hover{
-  text-decoration: none;
+.item_card{
+  &:hover{
+    text-decoration: none;
+  }
 }
+
 .item_list{
   margin: 0 auto;
 }
@@ -110,13 +113,23 @@ $font_color :#21252A;;
   text-align: center;
   margin-bottom: 30px;
 }
-
+.item_body{
+  padding-left: 10%;
+}
 .item_image img{
   width: 240px;
   text-align: center;
   height: auto;
 }
+.campaignflg{
+  text-align: center;
+  color: #21252A;
+  margin-bottom: 0;
+  &:hover{
+    color: #21252A;
+  }
 
+}
 .sale{
   display: flex;
   &__item{

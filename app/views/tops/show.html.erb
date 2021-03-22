@@ -13,7 +13,7 @@
   <div class="item_show__price">
     <% if @item.sale_id != 1 %>
       <p class="sale__item_price">¥<%= @item.price %>-</p>
-      <p class="sale__item_saleprice">キャンペーン価格<span>  ¥<% saleprice = @item.price.to_i * @item.sale.sale %><%= saleprice.to_i  %>-</p></span>
+      <p class="sale__item_saleprice"><span>  ¥<% saleprice = @item.price.to_i * @item.sale.sale %><%= saleprice.to_i  %>-  </span><%= @item.sale.name %>OFF</p>
     <% else %>
       <p class="sale">¥<%= @item.price %>-</p>
     <% end %>
