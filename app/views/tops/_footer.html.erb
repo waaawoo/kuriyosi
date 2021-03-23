@@ -1,10 +1,13 @@
-<footer>
-  <div>
-    <p>©︎ <a href="">プライバシーポリシー</a><p>
-  </div>
-  <div>
-    <% if !user_signed_in? %>
-      <%= link_to "ログイン",  new_user_session_path %>
-    <% end %>
+<footer class="footer">
+  <div class="footer__content">
+    <div class="footer__info">
+      <p class="footer__info__phone">電話番号</p>
+      <a href="tel:0587-54-5844" class="btn">0587-54-5844</a>
+    </div>
+
+    <div class="footer__info__privacy">
+      <p>プライバシーポリシー</p>
+    </div>
   </div>
 </footer>
+<div class="copylite">©︎ 2021 栗芳</div>
