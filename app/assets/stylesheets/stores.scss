@@ -78,3 +78,19 @@
     }
   }
 }
+
+// edit
+.store_form{
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
+  > div{
+    margin-top: 20px;
+  }
+  &__name__area, &__phone__area, &__address__area{
+    width: 100%;
+  }
+}
