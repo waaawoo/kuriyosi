@@ -170,7 +170,13 @@ $font_color :#21252A;;
   }
 
   &__main{
-    display: flex;
+    @media screen and(max-width: 1080px) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @media screen and(min-width: 1080px) {
+      display: flex;
+    }
     margin-bottom: 100px;
     opacity: .8;
     transition: .2s;
@@ -179,7 +185,12 @@ $font_color :#21252A;;
       transition: .2s;
     }
     &__left{
-      width: 50%;
+      @media screen and(max-width: 1080px) {
+        width: 100%;
+      }
+      @media screen and(min-width: 1080px) {
+        width: 50%;
+      }
       &__image img{
         width: 100%;
       }
@@ -191,8 +202,7 @@ $font_color :#21252A;;
       padding-left: 20px;
 
       &__name, &__phone, &__address, &__time, &__holiday{
-        margin-bottom: 10px;
-        font-size: 3ex;
+        margin-bottom: 20px;
         color: #21252A;
       }
     }
