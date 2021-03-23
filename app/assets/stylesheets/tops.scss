@@ -136,14 +136,12 @@ $font_color :#21252A;;
 
 }
 .sale{
-  display: flex;
   &__item{
     &_price{
     text-decoration: line-through;
 
     }
     &_saleprice span{
-      font-size: large;
       color: red;
     }
   }
