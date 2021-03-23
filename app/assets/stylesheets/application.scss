@@ -267,6 +267,30 @@ html {
 
 }
 
-footer{
+.footer{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 10px 10%;
+  background-color: #21252A;
+  color: #FDF8F5;
+  &__info{
+    margin-bottom: 10px;
+    &__phone{
+      margin-bottom: 0;
+    }
+    >a{
+      color: #21252A;
+      background-color: #fff;
+      &:hover{
+        color: #fff;
+        background-color: #21252A;
+      }
+    }
+  }
+}
+.copylite{
   text-align: center;
+  background-color: #40454d;
+  color: #c9c9c9;
 }
