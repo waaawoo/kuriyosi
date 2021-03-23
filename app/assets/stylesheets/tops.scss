@@ -107,9 +107,11 @@ $font_color :#21252A;;
 }
 
 .item_title{
-  font-size: 30px;
   text-align: center;
   margin-bottom: 30px;
+  >h3 >span{
+    border-bottom: 1px solid;
+  }
 }
 .item_body{
   padding-left: 10%;
@@ -149,7 +151,12 @@ $font_color :#21252A;;
 
 // 店舗情報
 .store_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   > a:hover{
     text-decoration: none;
