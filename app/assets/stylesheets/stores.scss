@@ -3,7 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store_show{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   box-sizing: border-box;
   margin-bottom: 100px;
@@ -18,7 +23,14 @@
   }
 
   &__main{
-    display: flex;
+    @media screen and(max-width: 1080px) {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media screen and(min-width: 1080px) {
+      display: flex;
+    }
   }
 }
 
@@ -28,7 +40,12 @@
       height: auto;
 
       &__image{
-       width: 70%;
+        @media screen and(max-width: 1080px) {
+          width: 100%;
+        }
+        @media screen and(min-width: 1080px) {
+          width: 70%;
+        }
       }
         > ul{
           display: flex;
@@ -46,13 +63,17 @@
 }
 .show__main{
   &__right{
-    width: 50%;
-    height: auto;
-    padding-left: 50px;
+    @media screen and(max-width: 1080px) {
+      width: 100%;
+    }
+    @media screen and(min-width: 1080px) {
+      width: 50%;
+      height: auto;
+      padding-left: 50px;
+    }
 
     &__name, &__phone, &__address, &__time, &__holiday{
       margin-bottom: 15px;
-      font-size: 16px;
       border-bottom: 1px solid;
     }
   }
