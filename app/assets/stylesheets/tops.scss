@@ -6,43 +6,38 @@ $main_color :#FDF8F5;
 $font_color :#21252A;;
 
 // スライダー部分
-.priviews{
+.slider .main_image2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  z-index: 0;
-  margin: 0 auto;
+  height: 100vh;
+  background: #fff;
+  background-image: url("/images/topmain1.jpg");
+  background-size: cover;
 }
 
-.slider{
-  position: relative;
-}
-
-.fa-arrow-left {
-  font-size: 50px;
-  position: absolute;
-  z-index: 100;
-  left: 30px;
-  top: 85px;
-}
-
-.fa-arrow-right {
-  font-size: 50px;
-  position: absolute;
-  z-index: 100;
-  right: 30px;
-  top: 85px;
-}
 
 // 新着情報部分
 .news_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   margin-bottom: 50px;
+  font-size: xx-large;
 }
 
-.new_title_font{
+.new_title{
   text-align: center;
   padding: 30px 0;
-  font-size: 24px;
+  >h3 >span{
+    border-bottom: 1px solid;
+  }
 }
 .news_all{
   margin-bottom: 30px;
@@ -65,7 +60,12 @@ $font_color :#21252A;;
 
 // 商品一覧
 .item_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   background-color: $main_color;
   padding-top: 50px;
@@ -82,8 +82,6 @@ $font_color :#21252A;;
 }
 .top_main_image{
   position: absolute;
-  // left: 0;
-  // top: 0;
   opacity: 0;
   transition: 0.5s;
   z-index: 1;
@@ -109,15 +107,22 @@ $font_color :#21252A;;
 }
 
 .item_title{
-  font-size: 30px;
   text-align: center;
   margin-bottom: 30px;
+  >h3 >span{
+    border-bottom: 1px solid;
+  }
 }
 .item_body{
   padding-left: 10%;
 }
 .item_image img{
-  width: 240px;
+  @media screen and(max-width: 1080px) {
+    width: 30vh;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 240px;
+  }
   text-align: center;
   height: auto;
 }
@@ -131,14 +136,12 @@ $font_color :#21252A;;
 
 }
 .sale{
-  display: flex;
   &__item{
     &_price{
     text-decoration: line-through;
 
     }
     &_saleprice span{
-      font-size: large;
       color: red;
     }
   }
@@ -146,7 +149,12 @@ $font_color :#21252A;;
 
 // 店舗情報
 .store_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   > a:hover{
     text-decoration: none;
@@ -162,7 +170,13 @@ $font_color :#21252A;;
   }
 
   &__main{
-    display: flex;
+    @media screen and(max-width: 1080px) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @media screen and(min-width: 1080px) {
+      display: flex;
+    }
     margin-bottom: 100px;
     opacity: .8;
     transition: .2s;
@@ -171,7 +185,12 @@ $font_color :#21252A;;
       transition: .2s;
     }
     &__left{
-      width: 50%;
+      @media screen and(max-width: 1080px) {
+        width: 100%;
+      }
+      @media screen and(min-width: 1080px) {
+        width: 50%;
+      }
       &__image img{
         width: 100%;
       }
@@ -183,8 +202,7 @@ $font_color :#21252A;;
       padding-left: 20px;
 
       &__name, &__phone, &__address, &__time, &__holiday{
-        margin-bottom: 10px;
-        font-size: 3ex;
+        margin-bottom: 20px;
         color: #21252A;
       }
     }

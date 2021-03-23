@@ -26,6 +26,19 @@ $main_color :#FDF8F5;
 $font_color :#21252A;
 $pc_view: 1080px;
 $sp_view: 360px;
+html {
+  font-size: 100%;
+
+  // 600px以降から、100pxごとに1px大きくなる
+  @media (min-width: 600px) {
+    font-size: calc(112.5% + 4 * (100vw - 600px) / 400)
+  }
+
+  // 1,000px以上は、22pxに
+  @media (min-width: 1000px) {
+    font-size: calc(137.5%)
+  }
+}
  * {
     font-family: 'Shippori Mincho', serif;
     box-sizing: border-box;
@@ -159,8 +172,8 @@ $sp_view: 360px;
   /* バーガー */
   .burger-btn{
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     position: relative;
     z-index: 3;
     border: none;
@@ -168,8 +181,8 @@ $sp_view: 360px;
   }
 
   .bar{
-    width: 20px;
-    height: 1px;
+    width: 30px;
+    height: 2px;
     display: block;
     position: absolute;
     left: 50%;
@@ -189,7 +202,7 @@ $sp_view: 360px;
   }
   /* バーガークリック時 */
   .burger-btn.close .bar_top{
-    transform: translate(-50%,10px) rotate(45deg);
+    transform: translate(-55%, 20px) rotate(45deg);
     transition: transform .3s;
   }
   .burger-btn.close .bar_mid{
@@ -197,7 +210,7 @@ $sp_view: 360px;
     transition: opacity .3s;
   }
   .burger-btn.close .bar_bottom{
-  transform: translate(-50%,-8px) rotate(-45deg);
+  transform: translate(-54%, -18px) rotate(-45deg);
   transition: transform .3s;
   }
   .nav-wrapper{
@@ -235,7 +248,8 @@ $sp_view: 360px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 50px;
+    font-size: xxx-large;
   }
   .menu-list a{
     color: #fff;
