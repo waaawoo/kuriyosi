@@ -27,7 +27,7 @@
     <%= f.collection_select(:sale_id, Sale.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
   </div>
   <%# TODO リファクタリング必要 %>
-  <div class="item_image">
+  <div class="item_image__input">
 
     <div class="item_image__filed">
       <label for="">商品画像(メイン画像)<span>必須</span></label>
