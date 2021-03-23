@@ -60,7 +60,12 @@ $font_color :#21252A;;
 
 // 商品一覧
 .item_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   background-color: $main_color;
   padding-top: 50px;
@@ -77,8 +82,6 @@ $font_color :#21252A;;
 }
 .top_main_image{
   position: absolute;
-  // left: 0;
-  // top: 0;
   opacity: 0;
   transition: 0.5s;
   z-index: 1;
@@ -112,7 +115,12 @@ $font_color :#21252A;;
   padding-left: 10%;
 }
 .item_image img{
-  width: 240px;
+  @media screen and(max-width: 1080px) {
+    width: 30vh;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 240px;
+  }
   text-align: center;
   height: auto;
 }
