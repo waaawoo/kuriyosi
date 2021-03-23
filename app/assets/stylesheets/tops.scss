@@ -6,31 +6,18 @@ $main_color :#FDF8F5;
 $font_color :#21252A;;
 
 // スライダー部分
-.priviews{
+.slider .main_image2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  z-index: 0;
-  margin: 0 auto;
+  height: 100vh;
+  background: #fff;
+  background-image: url("/images/topmain1.jpg");
+  background-size: cover;
 }
 
-.slider{
-  position: relative;
-}
-
-.fa-arrow-left {
-  font-size: 50px;
-  position: absolute;
-  z-index: 100;
-  left: 30px;
-  top: 85px;
-}
-
-.fa-arrow-right {
-  font-size: 50px;
-  position: absolute;
-  z-index: 100;
-  right: 30px;
-  top: 85px;
-}
 
 // 新着情報部分
 .news_container{
