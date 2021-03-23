@@ -109,16 +109,17 @@
       }
     }
     &__time{
-      width: 30%;
+      width: 20%;
+      font-size: medium;
     }
     &__title{
-      width: 40%;
+      width: 60%;
     }
     &__edit{
-      width: 15%;
+      width: 10%;
     }
     &__delete{
-      width: 15%;
+      width: 10%;
     }
   }
 }

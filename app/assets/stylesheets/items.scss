@@ -99,10 +99,10 @@
 
 // アイテム詳細画面
 .item_show{
-  @media screen and(max-width: 1000px) {
+  @media screen and(max-width: 1080px) {
     width: 700px;
   }
-  @media screen and(min-width: 1000px) {
+  @media screen and(min-width: 1080px) {
     width: 1000px;
   }
   margin: 0 auto;

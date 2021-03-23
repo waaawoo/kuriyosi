@@ -21,15 +21,23 @@ $font_color :#21252A;;
 
 // 新着情報部分
 .news_container{
-  width: 60%;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
   margin-bottom: 50px;
+  font-size: xx-large;
 }
 
-.new_title_font{
+.new_title{
   text-align: center;
   padding: 30px 0;
-  font-size: 24px;
+  >h3 >span{
+    border-bottom: 1px solid;
+  }
 }
 .news_all{
   margin-bottom: 30px;
