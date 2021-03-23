@@ -126,8 +126,14 @@
 
 // 新着情報詳細
 .news_show{
-  width: 640px;
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
   margin: 0 auto;
+  margin-top: 50px;
 
 
   &__title{
@@ -137,10 +143,6 @@
       border-bottom: 1px solid;
       font-size: larger;
     }
-  }
-
-  &__main{
-    font-size: 16px;
   }
 
   &__news_title{
