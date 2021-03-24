@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :items
   resources :news
   resources :stores
+  resources :sales
   get "items_list" => "items#items_list"
   get "campaign_list" => 'tops#campaign_list'
 end

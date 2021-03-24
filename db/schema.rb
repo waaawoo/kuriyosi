@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_041320) do
+ActiveRecord::Schema.define(version: 2021_03_24_090002) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,23 @@ ActiveRecord::Schema.define(version: 2021_03_20_041320) do
     t.index ["user_id"], name: "index_news_on_user_id"
   end
 
+  create_table "sales_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.integer "num", null: false
+    t.bigint "sales_price_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_sales_items_on_item_id"
+    t.index ["sales_price_id"], name: "index_sales_items_on_sales_price_id"
+  end
+
+  create_table "sales_prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "day", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "phone", null: false
@@ -81,4 +98,6 @@ ActiveRecord::Schema.define(version: 2021_03_20_041320) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
   add_foreign_key "news", "users"
+  add_foreign_key "sales_items", "items"
+  add_foreign_key "sales_items", "sales_prices"
 end

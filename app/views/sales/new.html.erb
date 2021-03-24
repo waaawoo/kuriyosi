@@ -1,0 +1,28 @@
+<%= form_with model: @sales, url: sales_path, local: true do |f| %>
+  <h1>日付</h1>
+  <%= f.date_field :day %>
+
+  <h1>商品</h1>
+
+  <% i = 0%>
+  <% @items.each do |item| %>
+    <div>
+      <%= item.name %>
+      <%= f.number_field :num, class: "nums[#{i}] num" %>
+      <% if item.sale_id == 1 %>
+        <p class="sales_price"><%= item.price  %></p>
+      <% else %>
+        <p class="sales_price"><% saleprice = item.price.to_i * item.sale.sale %><%= saleprice.to_i  %></p>
+      <% end %>
+
+    <% i += 1 %>
+    </div>
+  <% end %>
+
+
+  <h1>売り上げ合計</h1>
+  <%= f.text_field :price, value: "12345" %>
+
+  <%= f.submit %>
+<% end %>
+

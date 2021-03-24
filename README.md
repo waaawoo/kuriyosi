@@ -30,7 +30,7 @@ Things you may want to cover:
   商品登録・編集・削除、
   新着情報登録・編集・削除、
   店舗情報の登録・編集
-  お買い物シュミレーション
+  売り上げ実績登録
 
 # URL
 https://kuriyosi.herokuapp.com/
@@ -60,6 +60,7 @@ column Type Options
 ### association
 belongs_to :user
 has_many :images
+has_many :sales_item
 
 ## newsテーブル
 
@@ -83,4 +84,22 @@ has_many :images
 |  close_time        | string     | null: false                    |
 |  holiday_id        | integer    | null: false                    |
 
+### association
 has_many :images
+
+## sales_priceテーブル
+| Column             | Type       | Options                        |
+| -------------------|----------- |--------------------------------|
+|  price             | integer    | null: false                    |
+|  day               | date       | null: false                    |
+
+has_many :sales_items
+
+## sales_itemテーブル
+| Column             | Type       | Options                        |
+| -------------------|----------- |--------------------------------|
+|  item              | references | null: false, foreign_key: true |
+|  num               | integer    | null: false                    |
+
+belongs_to :sales_price
+belongs_to :item
