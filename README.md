@@ -60,7 +60,7 @@ column Type Options
 ### association
 belongs_to :user
 has_many :images
-has_many :sales
+has_many :sales_item
 
 ## newsテーブル
 
@@ -98,7 +98,8 @@ has_many :sales_items
 ## sales_itemテーブル
 | Column             | Type       | Options                        |
 | -------------------|----------- |--------------------------------|
-|  item_id           | integer    | null: false                    |
+|  item              | references | null: false, foreign_key: true |
 |  num               | integer    | null: false                    |
 
 belongs_to :sales_price
+belongs_to :item
