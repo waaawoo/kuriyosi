@@ -14,7 +14,7 @@ class Item < ApplicationRecord
 
   # association
   belongs_to :user
-
+  has_many :sales_items
   # モジュールの読み込み
   extend ActiveHash::Associations::ActiveRecordExtensions
   # activehash
