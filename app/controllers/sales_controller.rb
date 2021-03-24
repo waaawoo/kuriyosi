@@ -7,15 +7,21 @@ class SalesController < ApplicationController
 
   def new
     @sales = SalespriceItem.new
+    @items = Item.all
   end
 
   def create
     @sales = SalespriceItem.new(sales_params)
+    if @sales.valid?
+    else
+      @items = Item.all
+      render :new
+    end
   end
 
   private
 
   def sales_params
-    params.require(:sales).permit(:day, :price, :item_id, :num, :sales_price_id)
+    params.require(:salesprice_item).permit(:day, :price, :item_id, :num, :sales_price_id)
   end
 end

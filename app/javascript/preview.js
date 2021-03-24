@@ -55,4 +55,35 @@ $(function(){
     });
   });
 
+  //合計金額出力よう
+  // 変数へ代入
+  let nums_all = document.querySelectorAll('.num');
+  let numsLength = nums_all.length;
+  let sum_price = [numsLength];
+  // 要素分イベントを用意
+  document.querySelectorAll('.num').forEach((nums) => {
+    nums.addEventListener('keyup', () => {
+      // どの要素をクリックしたか判定
+      roop_count = [].slice.call(nums_all).indexOf(nums);
+      let count = nums.value;
+      price = document.getElementsByClassName('sales_price');
+      // クリックした要素ならば計算して変数に代入
+      for(let index = 0; index < numsLength; index++){
+        if(index == roop_count){
+          sum = (parseFloat(price[index].innerText) * count)
+        }
+      }
+      // 要素ごとに配列へ格納
+      for(let roop = 0; roop < numsLength; roop++){
+        if(roop == roop_count){
+          sum_price[roop] = sum;
+        }
+      }
+      // 配列の合計値を変数へ格納
+      let totalsum = sum_price.reduce(function(a, x){return a + x;});
+      console.log("合計"  + totalsum);
+      document.getElementById("salesprice_item_price").value = totalsum;
+    });
+  });
+
 });
