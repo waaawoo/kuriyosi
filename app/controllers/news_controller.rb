@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
   before_action :auth_Check, only: [:new, :create, :edit, :upadate, :destroy]
+
   def index
     @newsList = News.order(created_at: :DESC)
   end

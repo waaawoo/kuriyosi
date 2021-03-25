@@ -1,4 +1,6 @@
-<%= form_with model: @sales, url: sales_path, local: true do |f| %>
+<%= form_with model: @salesprice_item, url: sales_path, local: true do |f| %>
+  <%# エラーメッセージ %>
+      <%= render "items/errors", model: f.object %>
   <h1>日付</h1>
   <%= f.date_field :day %>
 
@@ -8,7 +10,8 @@
   <% @items.each do |item| %>
     <div>
       <%= item.name %>
-      <%= f.number_field :num, class: "nums[#{i}] num" %>
+      <%= f.hidden_field :item_id, value: item.id %>
+      <%= f.number_field :num, class: "num[#{i}] num" %>
       <% if item.sale_id == 1 %>
         <p class="sales_price"><%= item.price  %></p>
       <% else %>
@@ -21,8 +24,8 @@
 
 
   <h1>売り上げ合計</h1>
-  <%= f.text_field :price, value: "12345" %>
+  <%= f.text_field :price, value: "0" %>
 
-  <%= f.submit %>
+  <%= f.submit "売り上げを登録する" %>
 <% end %>
 
