@@ -1,4 +1,4 @@
-<%= form_with model: @salesprice_item, url: sales_path, local: true do |f| %>
+<%= form_with model: @sales, url: sales_path, local: true do |f| %>
   <%# エラーメッセージ %>
       <%= render "items/errors", model: f.object %>
   <h1>日付</h1>
@@ -11,7 +11,7 @@
     <div>
       <%= item.name %>
       <%= f.hidden_field :item_id, value: item.id %>
-      <%= f.number_field :num, class: "num[#{i}] num" %>
+      <%= f.number_field :num ,class: "num[#{i}] num" %>
       <% if item.sale_id == 1 %>
         <p class="sales_price"><%= item.price  %></p>
       <% else %>

@@ -82,7 +82,7 @@ $(function(){
       // 配列の合計値を変数へ格納
       let totalsum = sum_price.reduce(function(a, x){return a + x;});
       console.log("合計"  + totalsum);
-      document.getElementById("salesprice_item_price").value = totalsum;
+      document.getElementById("sales_price_price").value = totalsum;
     });
   });
 

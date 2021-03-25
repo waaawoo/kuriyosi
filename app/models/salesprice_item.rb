@@ -11,7 +11,6 @@ class SalespriceItem
   end
 
   def save
-    binding.pry
     sales_price = SalesPrice.create(day: day, price: price)
     SalesItem.create(item_id: item_id, num: num, sales_price_id: sales_price.id)
   end
