@@ -17,7 +17,6 @@ class SalesController < ApplicationController
       @sales.save
       redirect_to items_path, notice: "登録に成功しました"
     else
-
       render :new
     end
   end

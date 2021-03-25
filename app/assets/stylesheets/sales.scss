@@ -1,3 +1,39 @@
 // Place all the styles related to the sales controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sales{
+  @media screen and(max-width: 1080px) {
+    width: 80%;
+  }
+  @media screen and(min-width: 1080px) {
+    width: 60%;
+  }
+  margin: 0 auto;
+
+  &__form{
+    display: flex;
+  }
+  &__day{
+    margin: 50px 0;
+    &__input{
+      padding: 30px 60px;
+    }
+  }
+
+  &__item{
+    margin: 20px;
+
+    &__name{
+      margin-bottom: 5px;
+    }
+  }
+  &__suminput{
+    margin: 0 auto;
+    position: fixed;
+    left: 50%;
+  }
+  &__sum{
+    margin: 50px 0;
+
+  }
+}

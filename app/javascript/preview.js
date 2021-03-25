@@ -57,9 +57,9 @@ $(function(){
 
   //合計金額出力よう
   // 変数へ代入
-  let nums_all = document.querySelectorAll('.num');
-  let numsLength = nums_all.length;
-  let sum_price = [numsLength];
+  const nums_all = document.querySelectorAll('.num');
+  const numsLength = nums_all.length;
+  const sum_price = [numsLength];
   // 要素分イベントを用意
   document.querySelectorAll('.num').forEach((nums) => {
     nums.addEventListener('keyup', () => {
@@ -86,4 +86,16 @@ $(function(){
     });
   });
 
+  // スクロール時固定
+  $(function($) {
+    var nav = $('.sales__suminput'),
+    offset = nav.offset();
+    $(window).scroll(function () {
+      if($(window).scrollTop() > offset.top) {
+        nav.addClass('sales__suminput');
+      } else {
+        nav.removeClass('sales__suminput');
+      }
+    });
+  });
 });
