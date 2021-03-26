@@ -20,15 +20,20 @@
   <div class="sales__index__results">
     <p>30件までの情報を表示します</p>
     <% if @results.length !=0 %>
+      <% sum = 0 %>
       <% @results.each do |result| %>
       <p class="row">
           <span class="col-3">[<%= result.day %>]</span>
           <span class="col-3">売上金額: ¥<%= result.price %>-</span>
           <span class="col-2"><%= link_to "編集", edit_sale_path(result.id) %></span>
+          <% sum += result.price %>
       </p>
       <% end %>
     <% else %>
       該当するデータはありません
+    <% end %>
+    <% if sum != 0 %>
+      <p>合計:<%= sum %></p>
     <% end %>
 
   </div>
