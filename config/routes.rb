@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :items
   resources :news
   resources :stores
-  resources :sales
+  resources :sales do
+    collection do
+      get 'search'
+    end
+  end
   get "items_list" => "items#items_list"
   get "campaign_list" => 'tops#campaign_list'
-  get "sales_list" => 'sales#sales_list'
 end

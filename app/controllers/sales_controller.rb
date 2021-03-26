@@ -1,9 +1,9 @@
 class SalesController < ApplicationController
   before_action :auth_Check
+  before_action :search_slase, only: [:index, :search]
 
   def index
     @sales = SalesPrice.all
-    binding.pry
   end
 
   def new
@@ -22,12 +22,9 @@ class SalesController < ApplicationController
     end
   end
 
-  def sales_list
-    @sales = SalesPrice.new
-  end
-
   def search
-
+    # binding.pry
+    @results = @p.result(distinct: true)# 検索条件にマッチした商品の情報を取得
   end
 
   private
@@ -36,12 +33,12 @@ class SalesController < ApplicationController
     params.require(:sales_price).permit(:day, :price)
   end
 
-  def day_join
-    date = params[day]
+  def search_slase
+    @p = SalesPrice.ransack(params[:q])  # 検索オブジェクトを生成
   end
 
-  def day_product
-    @s = SalesPrise.ransack(params[:q])
-  end
+  # def set_day_column
+  #   @day_info = SalesPrice.select("day").distinct
+  # end
 
 end
