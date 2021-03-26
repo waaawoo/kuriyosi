@@ -59,7 +59,7 @@ $(function(){
   // 変数へ代入
   const nums_all = document.querySelectorAll('.num');
   const numsLength = nums_all.length;
-  const sum_price = [numsLength];
+  let sum_price = new Array(numsLength);
   // 要素分イベントを用意
   document.querySelectorAll('.num').forEach((nums) => {
     nums.addEventListener('keyup', () => {

@@ -6,7 +6,7 @@
 
   <div class="sales__index__body">
     <%= search_form_for @p, url: sales_path do |f| %>
-      <p><%= f.label "範囲検索(最大10件までしか表示されません)", class: "sales__index__body__title" %></p>
+      <p><%= f.label "範囲検索(最大30件までしか表示されません)", class: "sales__index__body__title" %></p>
 
       <div class="sales__index__body__input">
         <p><%= f.date_field :day_gteq %> 〜</p>
@@ -18,7 +18,7 @@
     <% end %>
 
   <div class="sales__index__results">
-    <p>10件の情報を表示します</p>
+    <p>30件までの情報を表示します</p>
     <% if @results.length !=0 %>
       <% @results.each do |result| %>
       <p class="row">

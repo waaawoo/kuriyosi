@@ -4,7 +4,7 @@ class SalesController < ApplicationController
   def index
     @sales = SalesPrice.all
     @p = SalesPrice.ransack(params[:q])  # 検索オブジェクトを生成
-    @results = @p.result(distinct: true).order(day: :desc).limit(10) # 検索条件にマッチした商品の情報を取得
+    @results = @p.result(distinct: true).order(day: :desc).limit(30) # 検索条件にマッチした商品の情報を取得
   end
 
   def new
@@ -20,6 +20,20 @@ class SalesController < ApplicationController
       redirect_to items_path, notice: "登録に成功しました"
     else
       render :new
+    end
+  end
+
+  def edit
+    @items = Item.all
+    @sales = SalesPrice.find(params[:id])
+  end
+
+  def update
+    @sales = SalesPrice.find(params[:id])
+    if @sales.update(sales_params)
+      redirect_to items_path, notice: "編集に成功しました"
+    else
+      render :edit
     end
   end
 

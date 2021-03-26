@@ -1,0 +1,22 @@
+<div class="sales">
+  <%= form_with model: @sales, method: :PUT, url: sale_path(@sales.id),class: "sales__form", local: true do |f| %>
+  <div class="sales__input">
+  <%# エラーメッセージ %>
+  <%= render "items/errors", model: f.object %>
+    <div class="sales__day">
+    </div>
+
+    <%# 商品一覧 %>
+    <%= render "sales_form", { f: f } %>
+
+  <div class="sales__suminput">
+    <div class="sales__sum">
+      <h1>売り上げ合計</h1>
+      <%= f.text_field :price, value: "0" %>
+    </div>
+    <div class="sales__submit">
+      <%= f.submit "売り上げを登録する" %>
+    </div>
+    <% end %>
+  </div>
+</div>
