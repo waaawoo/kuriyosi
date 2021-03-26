@@ -6,4 +6,5 @@ class SalesPrice < ApplicationRecord
       validates :day, uniqueness: true
       validates :price
     end
+
 end

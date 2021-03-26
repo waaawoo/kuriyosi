@@ -1,0 +1,13 @@
+<%= form_with(url: sales_path, method: :get, local: true) do |f| %>
+  <%= f.date_select :day, { use_month_numbers: true, discard_day: true } %>
+  <%= f.submit "検索" %>
+<% end %>
+
+<% if !@sales.blank? %>
+  <% @sales.each do |sale| %>
+    <p><%= sale.day.strftime('%Y/%m')  %>
+    <span>売上金額</span>
+    ¥<%= sale.price %></p>
+    <%= link_to "編集", edit_sale_path(sale.id) %>
+  <% end %>
+<% end %>
