@@ -39,4 +39,9 @@ class SalesController < ApplicationController
   def day_join
     date = params[day]
   end
+
+  def day_product
+    @s = SalesPrise.ransack(params[:q])
+  end
+
 end
