@@ -57,9 +57,9 @@ $(function(){
 
   //合計金額出力よう
   // 変数へ代入
-  let nums_all = document.querySelectorAll('.num');
-  let numsLength = nums_all.length;
-  let sum_price = [numsLength];
+  const nums_all = document.querySelectorAll('.num');
+  const numsLength = nums_all.length;
+  const sum_price = [numsLength];
   // 要素分イベントを用意
   document.querySelectorAll('.num').forEach((nums) => {
     nums.addEventListener('keyup', () => {
@@ -82,8 +82,20 @@ $(function(){
       // 配列の合計値を変数へ格納
       let totalsum = sum_price.reduce(function(a, x){return a + x;});
       console.log("合計"  + totalsum);
-      document.getElementById("salesprice_item_price").value = totalsum;
+      document.getElementById("sales_price_price").value = totalsum;
     });
   });
 
+  // スクロール時固定
+  $(function($) {
+    var nav = $('.sales__suminput'),
+    offset = nav.offset();
+    $(window).scroll(function () {
+      if($(window).scrollTop() > offset.top) {
+        nav.addClass('sales__suminput');
+      } else {
+        nav.removeClass('sales__suminput');
+      }
+    });
+  });
 });

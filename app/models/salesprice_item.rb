@@ -7,7 +7,7 @@ class SalespriceItem
     validates :price
     validates :item_id
     validates :num
-    validates :sales_price_id
+    # validates :sales_price_id
   end
 
   def save

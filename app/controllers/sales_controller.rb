@@ -2,26 +2,41 @@ class SalesController < ApplicationController
   before_action :auth_Check
 
   def index
-
+    @sales = SalesPrice.all
+    binding.pry
   end
 
   def new
-    @sales = SalespriceItem.new
     @items = Item.all
+    @sales = SalesPrice.new
   end
 
   def create
-    @sales = SalespriceItem.new(sales_params)
+    @sales = SalesPrice.new(sales_params)
+    @items = Item.all
     if @sales.valid?
+      @sales.save
+      redirect_to items_path, notice: "登録に成功しました"
     else
-      @items = Item.all
       render :new
     end
+  end
+
+  def sales_list
+    @sales = SalesPrice.new
+  end
+
+  def search
+
   end
 
   private
 
   def sales_params
-    params.require(:salesprice_item).permit(:day, :price, :item_id, :num, :sales_price_id)
+    params.require(:sales_price).permit(:day, :price)
+  end
+
+  def day_join
+    date = params[day]
   end
 end

@@ -1,28 +1,41 @@
-<%= form_with model: @sales, url: sales_path, local: true do |f| %>
-  <h1>日付</h1>
-  <%= f.date_field :day %>
-
-  <h1>商品</h1>
-
-  <% i = 0%>
-  <% @items.each do |item| %>
-    <div>
-      <%= item.name %>
-      <%= f.number_field :num, class: "nums[#{i}] num" %>
-      <% if item.sale_id == 1 %>
-        <p class="sales_price"><%= item.price  %></p>
-      <% else %>
-        <p class="sales_price"><% saleprice = item.price.to_i * item.sale.sale %><%= saleprice.to_i  %></p>
-      <% end %>
-
-    <% i += 1 %>
+<div class="sales">
+  <%= form_with model: @sales, url: sales_path,class: "sales__form", local: true do |f| %>
+    <%# エラーメッセージ %>
+    <%= render "items/errors", model: f.object %>
+  <div class="sales__input">
+    <div class="sales__day">
+      <h1>日付</h1>
+      <%= f.date_field :day, class: "sales__day__input" %>
     </div>
-  <% end %>
 
+    <h1>商品一覧</h1>
 
-  <h1>売り上げ合計</h1>
-  <%= f.text_field :price, value: "12345" %>
+    <% i = 0%>
+    <% @items.each do |item| %>
+      <div class="sales__item">
+        <p class="sales__item__name"><%= item.name %></p>
+        <%= f.hidden_field :item_id, value: item.id %>
+        <%= f.number_field :num ,class: "num[#{i}] num" %>
+        <span> × </span>
+        <% if item.sale_id == 1 %>
+          <span class="sales_price"><%= item.price  %></span>
+        <% else %>
+          <span class="sales_price"><% saleprice = item.price.to_i * item.sale.sale %><%= saleprice.to_i  %></span>
+        <% end %>
 
-  <%= f.submit %>
-<% end %>
+      <% i += 1 %>
+      </div>
+    <% end %>
+  </div>
 
+  <div class="sales__suminput">
+    <div class="sales__sum">
+      <h1>売り上げ合計</h1>
+      <%= f.text_field :price, value: "0" %>
+    </div>
+    <div class="sales__submit">
+      <%= f.submit "売り上げを登録する" %>
+    </div>
+    <% end %>
+  </div>
+</div>
