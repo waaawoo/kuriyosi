@@ -17,7 +17,7 @@ class SalesController < ApplicationController
     @items = Item.all
     if @sales.valid?
       @sales.save
-      redirect_to items_path, notice: "登録に成功しました"
+      redirect_to sales_path, notice: "登録に成功しました"
     else
       render :new
     end
@@ -31,7 +31,7 @@ class SalesController < ApplicationController
   def update
     @sales = SalesPrice.find(params[:id])
     if @sales.update(sales_params)
-      redirect_to items_path, notice: "編集に成功しました"
+      redirect_to sales_path, notice: "編集に成功しました"
     else
       render :edit
     end
