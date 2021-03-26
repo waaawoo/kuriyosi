@@ -1,0 +1,20 @@
+<h1>商品一覧</h1>
+
+    <% i = 0%>
+    <% @items.each do |item| %>
+      <div class="sales__item">
+        <p class="sales__item__name"><%= item.name %></p>
+        <%= f.hidden_field :item_id, value: item.id %>
+        <%= f.number_field :num ,class: "num[#{i}] num" %>
+        <span> × </span>
+        <% if item.sale_id == 1 %>
+          <span class="sales_price"><%= item.price  %></span>
+        <% else %>
+          <span class="sales_price"><% saleprice = item.price.to_i * item.sale.sale %><%= saleprice.to_i  %></span>
+        <% end %>
+
+      <% i += 1 %>
+      </div>
+    <% end %>
+  </div>
+
