@@ -3,7 +3,8 @@ class SalesController < ApplicationController
 
   def index
     @sales = SalesPrice.all
-    binding.pry
+    @p = SalesPrice.ransack(params[:q])  # 検索オブジェクトを生成
+    @results = @p.result(distinct: true).order(day: :desc).limit(10) # 検索条件にマッチした商品の情報を取得
   end
 
   def new
@@ -22,21 +23,9 @@ class SalesController < ApplicationController
     end
   end
 
-  def sales_list
-    @sales = SalesPrice.new
-  end
-
-  def search
-
-  end
-
   private
 
   def sales_params
     params.require(:sales_price).permit(:day, :price)
-  end
-
-  def day_join
-    date = params[day]
   end
 end

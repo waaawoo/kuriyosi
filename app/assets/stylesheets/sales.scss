@@ -9,7 +9,7 @@
     width: 60%;
   }
   margin: 0 auto;
-
+  height: 100vh;
   &__form{
     display: flex;
   }
@@ -34,6 +34,42 @@
   }
   &__sum{
     margin: 50px 0;
+  }
 
+  // 検索画面(index)
+  &__index{
+    &__title{
+      margin: 50px 0;
+      text-align: center;
+      >h3 >span{
+        border-bottom: 1px solid;
+      }
+    }
+    &__body{
+      &__input{
+        @media screen and(max-width: 1080px) {
+
+        }
+        @media screen and(min-width: 1080px) {
+          display: flex;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__results{
+      margin-top: 100px;
+      >p >span{
+        margin: 0 30px;
+      }
+    }
+  }
+  & a{
+    color: #333;
+    opacity: 0.8;
+  }
+  & a:hover{
+    opacity: 1;
+    text-decoration: none;
   }
 }
