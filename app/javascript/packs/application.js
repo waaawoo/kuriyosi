@@ -10,6 +10,10 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery") //jQueryを追加
 require('bootstrap/dist/js/bootstrap.min.js')
+// チャート用
+require("chartkick")
+require("chart.js")
+// 自作js
 require("../burger")
 require("../slick")
 require("../preview")

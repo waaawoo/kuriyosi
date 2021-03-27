@@ -65,3 +65,8 @@ gem 'factory_bot_rails'
 gem 'faker'
 # 検索用gem
 gem "ransack"
+
+# グラフ用
+gem 'chartkick'
+# bundle install実行
+# コマンドyarn add chartkick chart.jsを実行

@@ -5,6 +5,7 @@ class SalesController < ApplicationController
     @sales = SalesPrice.all
     @p = SalesPrice.ransack(params[:q])  # 検索オブジェクトを生成
     @results = @p.result(distinct: true).order(day: :desc).limit(30) # 検索条件にマッチした商品の情報を取得
+    @date = @p.result(distinct: true).order(day: :ASC)
   end
 
   def new
