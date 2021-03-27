@@ -6,16 +6,33 @@ $main_color :#FDF8F5;
 $font_color :#21252A;;
 
 // スライダー部分
-.slider .main_image2{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  background: #fff;
-  background-image: url("/images/topmain1.jpg");
-  background-size: cover;
+.slider{
+  .main_image1, .main_image2, .main_image3, .main_image4, .main_image5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    background-position: center;
+    background-repeat:  no-repeat;
+  }
+  .main_image1{
+    background-image: url("/images/topimage2.jpg");
+  }
+  .main_image2{
+    background-image: url("/images/topimage3.jpg");
+  }
+  .main_image3{
+    background-image: url("/images/topimage4.jpg");
+  }
+  .main_image4{
+    background-image: url("/images/topimage6.jpg");
+  }
+  .main_image5{
+    background-image: url("/images/topimage7.jpg");
+  }
 }
 
 
