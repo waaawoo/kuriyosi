@@ -5,40 +5,44 @@
   </div>
 
   <div class="sales__index__body">
-    <%= search_form_for @p, url: sales_path do |f| %>
-      <p><%= f.label "範囲検索(最大30件までしか表示されません)", class: "sales__index__body__title" %></p>
+      <%= search_form_for @p, url: sales_path do |f| %>
+        <p><%= f.label "範囲検索(最大30件までしか表示されません)", class: "sales__index__body__title" %></p>
 
-      <div class="sales__index__body__input">
-        <p><%= f.date_field :day_gteq %> 〜</p>
-        <p><%= f.date_field :day_lteq%></p>
-      </div>
+        <div class="sales__index__body__input">
+          <p><%= f.date_field :day_gteq %> 〜</p>
+          <p><%= f.date_field :day_lteq%></p>
+        </div>
 
-      <%= f.submit '検索', class: "btn btn-primary" %>
-      <%= link_to '戻る', items_path, class: "btn" %>
-    <% end %>
-
-  <div class="sales__index__results">
-    <p>30件までの情報を表示します</p>
-    <% if @results.length !=0 %>
-      <% sum = 0 %>
-      <% @results.each do |result| %>
-      <p class="row">
-          <span class="col-3">[<%= result.day %>]</span>
-          <span class="col-3">売上金額: ¥<%= result.price %>-</span>
-          <span class="col-2"><%= link_to "編集", edit_sale_path(result.id) %></span>
-          <% sum += result.price %>
-      </p>
+        <%= f.submit '検索', class: "btn btn-primary" %>
+        <%= link_to '戻る', items_path, class: "btn" %>
       <% end %>
-    <% else %>
-      該当するデータはありません
-    <% end %>
-    <% if sum != 0 %>
-      <p>合計:<%= sum %></p>
-    <% end %>
 
-  </div>
+    <div class="sales__index__results">
+      <p>30件までの情報を表示します</p>
+      <% if @results.length !=0 %>
+        <% sum = 0 %>
+        <% @results.each do |result| %>
+        <p class="row">
+            <span class="col-3">[<%= result.day %>]</span>
+            <span class="col-3">売上金額: ¥<%= result.price %>-</span>
+            <span class="col-2"><%= link_to "編集", edit_sale_path(result.id) %></span>
+            <% sum += result.price %>
+        </p>
+        <% end %>
+      <% else %>
+        該当するデータはありません
+      <% end %>
+      <% if sum != 0 %>
+        <p>合計:<%= sum %></p>
+      <% end %>
 
+    </div>
   </div>
+  <p id="notice"><%= notice %></p>
+
+
+<%# チャート表示 %>
+<%= column_chart @date.group(:day).sum(:price), id: "column-chart", width: "800px", height: "500px" %>
 
 </div>
 
