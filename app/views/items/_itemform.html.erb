@@ -54,6 +54,15 @@
       <%= f.file_field :image, id: "item-image5", class:"file" ,name: "item[images][]" %>
     </div>
 
+
+    <%# 編集時編集前の画像表示 TODO 各登録・編集機能に実装、テンプレートとして切り出す  %>
+  <% if @item.images.attached? %>
+    <p>編集前画像</p>
+    <% @item.images.each do |image| %>
+    <%= image_tag image ,class: "edit_image_size" %></p>
+    <% end %>
+  <% end %>
+  <%# -------------------------------------------------------------------- %>
   </div>
 </div>
 <div class="item_btn">
