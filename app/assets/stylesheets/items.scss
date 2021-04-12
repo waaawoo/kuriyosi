@@ -73,6 +73,12 @@
     margin-bottom: 30px;
   }
 }
+.img_view{
+  >.img{
+    width: 30%;
+    height: auto;
+  }
+}
 
 .item_btn{
   &__submit{
