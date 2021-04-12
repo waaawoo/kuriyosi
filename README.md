@@ -43,6 +43,8 @@ Things you may want to cover:
 # URL
 https://kuriyosi.herokuapp.com/
 
+# 管理機能gif一覧
+https://docs.google.com/presentation/d/1Ec-s-tmmpPhvF0JSFlPmsns5N6lxukMc93AasoX55lU/edit?usp=sharing
 # テーブル設計
 
 ## userテーブル
